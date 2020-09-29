@@ -9,7 +9,7 @@ export const startLogin = (email, password) => {
 
         try {
             const resp = await fetchSinToken('auth', { email, password }, 'POST');
-            const body = await resp.text();
+            const body = await resp.json();
 
             if (body.ok) {
                 localStorage.setItem('token', body.token);
@@ -34,7 +34,7 @@ export const startRegister = (email, password, name) => {
 
         try {
             const resp = await fetchSinToken('auth/new', { email, password, name }, 'POST');
-            const body = await resp.text();
+            const body = await resp.json();
 
             if (body.ok) {
                 localStorage.setItem('token', body.token);
@@ -60,7 +60,7 @@ export const startChecking = () => {
     return async (dispatch) => {
         try {
             const resp = await fetchConToken('auth/renew');
-            const body = await resp.text();
+            const body = await resp.json();
 
             if (body.ok) {
                 localStorage.setItem('token', body.token);

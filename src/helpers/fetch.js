@@ -21,7 +21,7 @@ const fetchSinToken = (endpoint, data, method = 'GET') => {
 
 const fetchConToken = (endpoint, data, method = 'GET') => {
 
-    const url = `${baseUrl}/${endpoint}`;
+    const url = `http://${baseUrl}/${endpoint}`;
     const token = localStorage.getItem('token') || ''; //Pongo un string vacio por si me un null asi no me tira error
 
     if (method === 'GET') {
