@@ -62,7 +62,7 @@ const eventUpdated = (event) => ({
     payload: event
 });
 
-export const eventStartDelete = ()) => {
+export const eventStartDelete = () => {
     return async (dispatch, getState) => {
         const { id } = getState().calendar.activeEvent;
         try {
